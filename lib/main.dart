@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Testing deploy with firebase2',
+      title: 'Testing deploy with firebase3',
       theme: ThemeData(
         // This is the theme of your application.
         //
