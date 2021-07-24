@@ -12,13 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - name: install flutter
-      # - run: sudo git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
-      # - run: export PATH="$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:${PATH}"
-      # - run: echo "::add-path::$HOME/flutter/bin"
-      # - run: echo "::add-path::$HOME/flutter/bin/cache/dart-sdk/bin"
-      # - run: echo "$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/flutter/bin" >> $GITHUB_PATH
-      # - run: echo "$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/flutter/bin" >> $GITHUB_PATH
-      # - run: echo "$HOME/flutter/bin" >> $GITHUB_PATH
+      # - run: export PATH="/opt/flutter/bin:/opt/flutter/bin/cache/dart-sdk/bin:${PATH}"
+      # - run: echo "::add-path::/opt/flutter/bin"
+      # - run: echo "::add-path::/opt/flutter/bin/cache/dart-sdk/bin"
+      # - run: echo "/opt/flutter/bin/cache/dart-sdk/bin:/opt/flutter/bin" >> $GITHUB_PATH
+      # - run: echo "/opt/flutter/bin/cache/dart-sdk/bin:/opt/flutter/bin" >> $GITHUB_PATH
       # - name: test flutter
       - run: mkdir /opt/myscript
       - run: echo "echo aaaabbbbbcccc" > /opt/myscript/myscript.sh
@@ -27,10 +25,11 @@ jobs:
       - run: echo "/opt/myscript" >> $GITHUB_PATH
       - run: echo "$PATH"
       - run: myscript.sh
-      - uses: subosito/flutter-action@v1
-      # - run: ls $HOME/flutter/bin
-      # - run: .$HOME/flutter/bin/flutter
-      - run: flutter doctor -v
+      # - uses: subosito/flutter-action@v1
+      - run: sudo git clone -b stable https://github.com/flutter/flutter.git /opt/flutter
+      - run: echo "/opt/flutter/bin" >> $GITHUB_PATH
+      - run: ls /opt/flutter/bin
+      - run: ./opt/flutter/bin/flutter
       # - name: build web
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
