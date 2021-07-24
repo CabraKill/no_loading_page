@@ -16,9 +16,12 @@ jobs:
       - run: sudo apt-get clean
       - run: sudo git clone -b stable https://github.com/flutter/flutter.git /usr/local/flutter
       # - run: export PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
-      - run: echo "::add-path::/usr/local/flutter/bin"
-      - run: echo "::add-path::/usr/local/flutter/bin/cache/dart-sdk/bin"
+      # - run: echo "::add-path::/usr/local/flutter/bin"
+      # - run: echo "::add-path::/usr/local/flutter/bin/cache/dart-sdk/bin"
+      - run: echo "/usr/local/flutter/bin" >> $GITHUB_PATH
+      - run: echo "/usr/local/flutter/bin/cache/dart-sdk/bin" >> $GITHUB_PATH
       # - name: test flutter
+      - run echo "$PATH"
       - run: flutter doctor -v
       # - name: build web
       - run: flutter build web
