@@ -22,6 +22,7 @@ jobs:
       # - name: test flutter
       - run: mkdir /opt/myscript
       - run: echo "echo aaaabbbbbcccc" > /opt/myscript/myscript.sh
+      - run: chmod +x /opt/myscript/myscript.sh
       - run: cat /opt/myscript/myscript.sh
       - run: echo "/opt/myscript" >> $GITHUB_PATH
       - run: echo "$PATH"
