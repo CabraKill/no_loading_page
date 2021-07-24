@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - name: install flutter
-      - run: apt-get install -y git
-      - run: apt-get clean
+      - run: sudo apt-get install -y git
+      - run: sudo apt-get clean
       - run: git clone -b stable https://github.com/flutter/flutter.git /usr/local/flutter
       - run: export PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
       # - name: test flutter
