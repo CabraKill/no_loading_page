@@ -24,7 +24,7 @@ jobs:
       # - name: test flutter
       - run: ls /usr/local/flutter/bin
       - run: echo "$PATH"
-      - run: ./usr/local/flutter
+      - run: ./usr/local/flutter/bin/flutter
       - run: sudo flutter doctor -v
       # - name: build web
       - run: flutter build web
