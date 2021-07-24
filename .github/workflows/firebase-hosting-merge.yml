@@ -18,8 +18,7 @@ jobs:
       # - run: export PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
       # - run: echo "::add-path::/usr/local/flutter/bin"
       # - run: echo "::add-path::/usr/local/flutter/bin/cache/dart-sdk/bin"
-      - run: echo "/usr/local/flutter/bin" >> $GITHUB_PATH
-      - run: echo "/usr/local/flutter/bin/cache/dart-sdk/bin" >> $GITHUB_PATH
+      - run: echo "/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin" >> $GITHUB_PATH
       # - name: test flutter
       - run: echo "$PATH"
       - run: flutter doctor -v
