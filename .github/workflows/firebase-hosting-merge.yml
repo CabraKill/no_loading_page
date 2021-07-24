@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install flutter
+      # - name: install flutter
       - run: apt-get install -y git
       - run: apt-get clean
       - run: git clone -b stable https://github.com/flutter/flutter.git /usr/local/flutter
       - run: export PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
-      - name: test flutter
+      # - name: test flutter
       - run: flutter doctor -v
-      - name: build web
+      # - name: build web
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
