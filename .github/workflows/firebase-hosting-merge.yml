@@ -11,20 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
       # - name: install flutter
-      - run: sudo git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
+      # - run: sudo git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
       # - run: export PATH="$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:${PATH}"
       # - run: echo "::add-path::$HOME/flutter/bin"
       # - run: echo "::add-path::$HOME/flutter/bin/cache/dart-sdk/bin"
       # - run: echo "$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/flutter/bin" >> $GITHUB_PATH
       # - run: echo "$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/flutter/bin" >> $GITHUB_PATH
-      - run: echo "$HOME/flutter/bin" >> $GITHUB_PATH
+      # - run: echo "$HOME/flutter/bin" >> $GITHUB_PATH
       # - name: test flutter
       - run: echo "$PATH"
-      - run: ls $HOME/flutter/bin
-      - run: cat $HOME/flutter/bin/flutter 
-      - run: .$HOME/flutter/bin/flutter
-      - run: sudo flutter doctor -v
+      # - run: ls $HOME/flutter/bin
+      # - run: .$HOME/flutter/bin/flutter
+      - run: flutter doctor -v
       # - name: build web
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
