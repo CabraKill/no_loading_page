@@ -12,8 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - name: install flutter
-      - run: sudo apt-get install -y git
-      - run: sudo apt-get clean
       - run: sudo git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
       # - run: export PATH="$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:${PATH}"
       # - run: echo "::add-path::$HOME/flutter/bin"
@@ -22,8 +20,9 @@ jobs:
       # - run: echo "$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/flutter/bin" >> $GITHUB_PATH
       - run: echo "$HOME/flutter/bin" >> $GITHUB_PATH
       # - name: test flutter
-      - run: ls $HOME/flutter/bin
       - run: echo "$PATH"
+      - run: ls $HOME/flutter/bin
+      - run: cat $HOME/flutter/bin/flutter 
       - run: .$HOME/flutter/bin/flutter
       - run: sudo flutter doctor -v
       # - name: build web
