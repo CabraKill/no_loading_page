@@ -29,7 +29,7 @@ jobs:
       - run: sudo git clone -b stable https://github.com/flutter/flutter.git /opt/flutter
       - run: echo "/opt/flutter/bin" >> $GITHUB_PATH
       - run: ls /opt/flutter/bin
-      - run: ./opt/flutter/bin/flutter
+      - run: bash /opt/flutter/bin/flutter
       # - name: build web
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
