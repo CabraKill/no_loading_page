@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
       # - name: install flutter
       # - run: sudo git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
       # - run: export PATH="$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:${PATH}"
@@ -24,9 +23,10 @@ jobs:
       - run: mkdir /opt/myscript
       - run: echo "echo aaaabbbbbcccc" > /opt/myscript/myscript.sh
       - run: cat /opt/myscript/myscript.sh
-      - run: ehco "/opt/myscript" >> $GITHUB_PATH
+      - run: echo "/opt/myscript" >> $GITHUB_PATH
       - run: echo "$PATH"
       - run: myscript.sh
+      - uses: subosito/flutter-action@v1
       # - run: ls $HOME/flutter/bin
       # - run: .$HOME/flutter/bin/flutter
       - run: flutter doctor -v
