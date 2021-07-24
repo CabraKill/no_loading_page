@@ -6,9 +6,17 @@ name: Deploy to Firebase Hosting on PR
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    runs-on: cirrusci/flutter
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: install flutter
+      - run: apt-get install -y git
+      - run: apt-get clean
+      - run: git clone -b stable https://github.com/flutter/flutter.git /usr/local/flutter
+      - run: export PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
+      - name: test flutter
+      - run: flutter doctor -v
+      - name: build web
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
