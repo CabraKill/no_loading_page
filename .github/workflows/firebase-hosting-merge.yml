@@ -21,7 +21,9 @@ jobs:
       # - run: echo "$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/flutter/bin" >> $GITHUB_PATH
       # - run: echo "$HOME/flutter/bin" >> $GITHUB_PATH
       # - name: test flutter
+      - run: mkdir /opt/myscript
       - run: echo "echo aaaabbbbbcccc" > /opt/myscript/myscript.sh
+      - run: cat /opt/myscript/myscript.sh
       - run: ehco "/opt/myscript" >> $GITHUB_PATH
       - run: echo "$PATH"
       - run: myscript.sh
